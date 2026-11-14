@@ -3,26 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhammad Yajid Azkiya - Engineering & Academic Portfolio</title>
+  <title>Muhammad Yajid Azkiya - Academic & Engineering Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-dark: #070B19;
-      --bg-card: #0E172A;
-      --bg-card-alt: #131F38;
-      --border-color: #1E293B;
-      --border-accent: #334155;
-      --cyan-bright: #38BDF8;
-      --cyan-glow: #0284C7;
-      --cyan-soft: #BAE6FD;
-      --cyan-dark: #0369A1;
-      --text-main: #F8FAFC;
-      --text-muted: #94A3B8;
-      --text-dim: #64748B;
-      --gold: #F59E0B;
-      --emerald: #10B981;
+      --maroon-dark: #4A0810;
+      --maroon-primary: #7B1113;
+      --maroon-vibrant: #9E1B28;
+      --maroon-subtle: #C42D3C;
+      --maroon-soft: #FDF2F4;
+      --maroon-light: #FCE8EB;
+      --maroon-border: rgba(123, 17, 19, 0.16);
+      
+      --white-pure: #FFFFFF;
+      --white-surface: #FAFAFC;
+      --white-card: #FFFFFF;
+      
+      --text-dark: #111827;
+      --text-body: #374151;
+      --text-muted: #6B7280;
+      --text-dim: #9CA3AF;
+      
+      --gold-accent: #B45309;
+      --gold-soft: #FEF3C7;
+      --emerald: #059669;
+      --emerald-soft: #D1FAE5;
+      
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
     }
 
     * {
@@ -35,12 +46,12 @@
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #030712;
-      color: var(--text-main);
+      background-color: #EFE9E9;
+      color: var(--text-dark);
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px 0;
+      padding: 24px 0;
     }
 
     @page {
@@ -51,22 +62,20 @@
     .slide {
       width: 297mm;
       height: 210mm;
-      background-color: var(--bg-dark);
+      background-color: var(--white-pure);
       background-image: 
-        radial-gradient(circle at 90% 10%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 10% 90%, rgba(2, 132, 199, 0.06) 0%, transparent 40%),
-        linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-      background-size: 100% 100%, 100% 100%, 30px 30px, 30px 30px;
+        radial-gradient(circle at 95% 5%, rgba(123, 17, 19, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 5% 95%, rgba(158, 27, 40, 0.03) 0%, transparent 40%);
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       padding: 18mm 20mm;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 15px 40px rgba(74, 8, 16, 0.12);
       margin-bottom: 25px;
       page-break-after: always;
       page-break-inside: avoid;
+      border: 1px solid rgba(123, 17, 19, 0.1);
     }
 
     @media print {
@@ -77,6 +86,7 @@
       .slide {
         margin: 0;
         box-shadow: none;
+        border: none;
         page-break-after: always;
       }
       .no-print {
@@ -90,19 +100,19 @@
       top: 15px;
       right: 20px;
       z-index: 9999;
-      background: rgba(14, 23, 42, 0.85);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(8px);
-      border: 1px solid var(--cyan-bright);
-      padding: 10px 18px;
+      border: 1px solid var(--maroon-primary);
+      padding: 8px 16px;
       border-radius: 30px;
       display: flex;
       gap: 12px;
       align-items: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 30px rgba(123, 17, 19, 0.2);
     }
     .toolbar button {
-      background: var(--cyan-bright);
-      color: #070B19;
+      background: var(--maroon-primary);
+      color: var(--white-pure);
       border: none;
       padding: 8px 16px;
       border-radius: 20px;
@@ -115,7 +125,7 @@
       transition: all 0.2s;
     }
     .toolbar button:hover {
-      background: var(--cyan-soft);
+      background: var(--maroon-vibrant);
       transform: translateY(-1px);
     }
 
@@ -124,7 +134,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 2px solid var(--maroon-soft);
       padding-bottom: 10px;
       margin-bottom: 18px;
     }
@@ -134,61 +144,61 @@
       gap: 10px;
     }
     .slide-header .brand-indicator {
-      width: 8px;
-      height: 8px;
-      background: var(--cyan-bright);
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--cyan-bright);
+      width: 10px;
+      height: 10px;
+      background: var(--maroon-primary);
+      border-radius: 3px;
     }
     .slide-header .brand-text {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 1.5px;
-      color: var(--text-muted);
+      color: var(--maroon-primary);
       text-transform: uppercase;
     }
     .slide-header .target-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10.5px;
-      background: rgba(56, 189, 248, 0.1);
-      color: var(--cyan-bright);
-      padding: 4px 10px;
+      font-size: 11px;
+      background: var(--maroon-soft);
+      color: var(--maroon-primary);
+      padding: 4px 12px;
       border-radius: 6px;
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      font-weight: 600;
+      border: 1px solid var(--maroon-light);
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
 
     .slide-footer {
       margin-top: auto;
-      border-top: 1px solid var(--border-color);
+      border-top: 2px solid var(--maroon-soft);
       padding-top: 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 10px;
-      color: var(--text-dim);
-      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      color: var(--text-muted);
+      font-weight: 600;
     }
     .slide-footer a {
-      color: var(--cyan-bright);
+      color: var(--maroon-primary);
       text-decoration: none;
     }
 
-    /* Typography & Helpers */
+    /* Typography & Section Styles */
     h1, h2, h3, h4 {
       font-family: 'Space Grotesk', sans-serif;
-      color: var(--text-main);
+      color: var(--text-dark);
     }
     .title-accent {
-      color: var(--cyan-bright);
+      color: var(--maroon-primary);
+      position: relative;
     }
     .section-eyebrow {
-      font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
-      color: var(--cyan-bright);
+      color: var(--maroon-primary);
       text-transform: uppercase;
-      letter-spacing: 1.8px;
+      letter-spacing: 2px;
+      font-weight: 800;
       margin-bottom: 4px;
       display: flex;
       align-items: center;
@@ -196,27 +206,46 @@
     }
     .section-title {
       font-size: 26px;
-      font-weight: 700;
+      font-weight: 800;
       line-height: 1.2;
       margin-bottom: 4px;
+      letter-spacing: -0.5px;
     }
     .section-desc {
-      font-size: 12px;
+      font-size: 12.5px;
       color: var(--text-muted);
       margin-bottom: 16px;
+      line-height: 1.4;
     }
 
     /* Cards */
     .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
+      background: var(--white-pure);
+      border: 1px solid var(--maroon-border);
+      border-radius: var(--radius-md);
       padding: 16px;
-      position: relative;
+      box-shadow: 0 4px 16px rgba(123, 17, 19, 0.04);
     }
-    .card-glow {
-      border-color: rgba(56, 189, 248, 0.35);
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.05);
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .badge-maroon {
+      background: var(--maroon-primary);
+      color: var(--white-pure);
+    }
+    .badge-soft {
+      background: var(--maroon-soft);
+      color: var(--maroon-primary);
+      border: 1px solid var(--maroon-light);
     }
 
     /* SLIDE 1: COVER */
@@ -231,56 +260,45 @@
     .cover-badge-row {
       display: flex;
       gap: 10px;
-      margin-bottom: 20px;
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-    .badge-cyan {
-      background: rgba(56, 189, 248, 0.12);
-      color: var(--cyan-bright);
-      border: 1px solid rgba(56, 189, 248, 0.4);
-    }
-    .badge-slate {
-      background: var(--bg-card);
-      color: var(--text-muted);
-      border: 1px solid var(--border-color);
+      margin-bottom: 22px;
     }
     .cover-name {
-      font-size: 46px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -1px;
       line-height: 1.1;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      color: var(--text-dark);
+    }
+    .cover-name .name-highlight {
+      color: var(--maroon-primary);
+      background: linear-gradient(135deg, var(--maroon-primary), var(--maroon-vibrant));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .cover-tagline {
       font-size: 17px;
-      color: var(--text-muted);
+      color: var(--text-body);
       line-height: 1.5;
-      max-width: 750px;
-      margin-bottom: 30px;
+      max-width: 760px;
+      margin-bottom: 32px;
     }
     .cover-tagline strong {
-      color: var(--cyan-bright);
-      font-weight: 600;
+      color: var(--maroon-primary);
+      font-weight: 700;
     }
 
     .cover-meta-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 15px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      padding: 16px 20px;
-      border-radius: 12px;
-      max-width: 900px;
+      background: var(--white-pure);
+      border: 1px solid var(--maroon-border);
+      padding: 18px 22px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 30px rgba(123, 17, 19, 0.06);
+      max-width: 920px;
+      border-left: 5px solid var(--maroon-primary);
     }
     .meta-item {
       display: flex;
@@ -288,23 +306,23 @@
       gap: 4px;
     }
     .meta-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      color: var(--text-dim);
+      font-size: 10.5px;
+      color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 1px;
+      font-weight: 700;
     }
     .meta-val {
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--text-main);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--maroon-primary);
     }
     .meta-val a {
-      color: var(--cyan-bright);
+      color: var(--maroon-primary);
       text-decoration: none;
     }
 
-    /* SLIDE 2: ABOUT ME & CORE VALUES */
+    /* SLIDE 2: ABOUT ME */
     .about-layout {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
@@ -317,20 +335,31 @@
       justify-content: space-between;
     }
     .quote-box {
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(14, 23, 42, 0.9));
-      border-left: 3px solid var(--cyan-bright);
-      padding: 14px 16px;
-      border-radius: 0 10px 10px 0;
-      font-size: 13.5px;
+      background: linear-gradient(135deg, var(--maroon-primary), var(--maroon-dark));
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      font-size: 14px;
       line-height: 1.6;
-      color: var(--text-main);
-      margin-bottom: 14px;
+      color: var(--white-pure);
+      box-shadow: 0 8px 24px rgba(123, 17, 19, 0.18);
+      position: relative;
+    }
+    .quote-box::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 14px;
+      font-size: 48px;
+      color: rgba(255, 255, 255, 0.2);
+      font-family: serif;
     }
     .target-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 14px 16px;
+      background: var(--white-pure);
+      border: 1px solid var(--maroon-border);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      box-shadow: 0 4px 16px rgba(123, 17, 19, 0.04);
+      border-left: 4px solid var(--maroon-primary);
     }
     .target-header {
       display: flex;
@@ -338,13 +367,13 @@
       gap: 8px;
       margin-bottom: 8px;
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--cyan-bright);
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--maroon-primary);
     }
     .target-desc {
       font-size: 12px;
-      color: var(--text-muted);
+      color: var(--text-body);
       line-height: 1.5;
     }
 
@@ -354,20 +383,23 @@
       gap: 10px;
     }
     .pillar-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
+      background: var(--white-pure);
+      border: 1px solid var(--maroon-border);
+      border-radius: var(--radius-sm);
       padding: 12px 14px;
       display: flex;
       gap: 12px;
       align-items: flex-start;
+      box-shadow: 0 2px 8px rgba(123, 17, 19, 0.03);
+      transition: all 0.2s;
     }
     .pillar-num {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--cyan-bright);
-      background: rgba(56, 189, 248, 0.12);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--maroon-primary);
+      background: var(--maroon-soft);
+      border: 1px solid var(--maroon-light);
       width: 26px;
       height: 26px;
       border-radius: 6px;
@@ -379,6 +411,7 @@
     .pillar-info h4 {
       font-size: 13px;
       margin-bottom: 3px;
+      color: var(--text-dark);
     }
     .pillar-info p {
       font-size: 11px;
@@ -399,13 +432,14 @@
       gap: 10px;
     }
     .skill-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
+      background: var(--white-pure);
+      border: 1px solid var(--maroon-border);
+      border-radius: var(--radius-sm);
       padding: 12px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(123, 17, 19, 0.03);
     }
     .skill-top {
       display: flex;
@@ -416,15 +450,17 @@
     .skill-title {
       font-size: 12.5px;
       font-weight: 700;
-      color: var(--text-main);
+      color: var(--text-dark);
     }
     .skill-cat {
-      font-family: 'JetBrains Mono', monospace;
       font-size: 9px;
+      font-weight: 700;
       padding: 2px 6px;
       border-radius: 4px;
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--cyan-bright);
+      background: var(--maroon-soft);
+      color: var(--maroon-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
     .skill-desc {
       font-size: 11px;
@@ -433,34 +469,36 @@
       margin-bottom: 8px;
     }
     .skill-bar {
-      height: 4px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 2px;
+      height: 5px;
+      background: var(--maroon-soft);
+      border-radius: 3px;
       overflow: hidden;
     }
     .skill-progress {
       height: 100%;
-      background: linear-gradient(90deg, var(--cyan-glow), var(--cyan-bright));
-      border-radius: 2px;
+      background: linear-gradient(90deg, var(--maroon-primary), var(--maroon-subtle));
+      border-radius: 3px;
     }
 
     .pipeline-container {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 14px;
+      background: var(--white-pure);
+      border: 1px solid var(--maroon-border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      box-shadow: 0 4px 16px rgba(123, 17, 19, 0.04);
+      border-top: 4px solid var(--maroon-primary);
     }
     .pipeline-title {
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 10px;
       display: flex;
       align-items: center;
       gap: 6px;
-      color: var(--cyan-bright);
+      color: var(--maroon-primary);
     }
     .pipeline-step {
       display: flex;
@@ -476,17 +514,16 @@
       top: 24px;
       width: 2px;
       height: 22px;
-      background: var(--border-accent);
+      background: var(--maroon-light);
     }
     .pipeline-dot {
       width: 24px;
       height: 24px;
       border-radius: 50%;
-      background: var(--bg-card-alt);
-      border: 1px solid var(--cyan-bright);
-      color: var(--cyan-bright);
-      font-size: 10px;
-      font-weight: 700;
+      background: var(--maroon-primary);
+      color: var(--white-pure);
+      font-size: 10.5px;
+      font-weight: 800;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -494,13 +531,14 @@
       z-index: 2;
     }
     .pipeline-text h5 {
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 700;
+      color: var(--text-dark);
     }
     .pipeline-text p {
       font-size: 10.5px;
       color: var(--text-muted);
-      line-height: 1.3;
+      line-height: 1.35;
     }
 
     /* SLIDE 4, 5, 6: CASE STUDY LAYOUT */
@@ -521,17 +559,18 @@
       gap: 12px;
     }
     .case-spec-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
+      background: var(--white-pure);
+      border: 1px solid var(--maroon-border);
+      border-radius: var(--radius-sm);
       padding: 12px 14px;
+      box-shadow: 0 2px 8px rgba(123, 17, 19, 0.03);
     }
     .spec-header {
-      font-family: 'JetBrains Mono', monospace;
       font-size: 10.5px;
       text-transform: uppercase;
-      color: var(--cyan-bright);
+      color: var(--maroon-primary);
       letter-spacing: 1px;
+      font-weight: 800;
       margin-bottom: 6px;
       display: flex;
       align-items: center;
@@ -539,61 +578,65 @@
     }
     .spec-body {
       font-size: 11.5px;
-      color: var(--text-muted);
+      color: var(--text-body);
       line-height: 1.5;
     }
     .spec-body strong {
-      color: var(--text-main);
+      color: var(--text-dark);
     }
 
-    .interactive-preview {
-      background: var(--bg-card-alt);
-      border: 1px solid var(--border-accent);
-      border-radius: 10px;
+    .creative-showcase {
+      background: var(--white-pure);
+      border: 1px solid var(--maroon-border);
+      border-radius: var(--radius-md);
       padding: 14px;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      box-shadow: 0 4px 16px rgba(123, 17, 19, 0.04);
+      border-top: 3px solid var(--maroon-primary);
     }
-    .preview-header {
+    .showcase-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 10px;
       padding-bottom: 6px;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--maroon-light);
     }
-    .preview-title {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      color: var(--cyan-soft);
+    .showcase-title {
+      font-size: 10.5px;
+      font-weight: 800;
+      color: var(--maroon-primary);
+      letter-spacing: 0.5px;
     }
-    .code-snippet {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 10px 12px;
+    .creative-box {
+      font-size: 11px;
+      background: var(--maroon-soft);
+      padding: 12px 14px;
       border-radius: 8px;
-      color: #7DD3FC;
+      color: var(--text-dark);
       line-height: 1.6;
-      border-left: 2px solid var(--cyan-bright);
+      border-left: 3px solid var(--maroon-primary);
     }
-    .code-comment {
-      color: #64748B;
+    .creative-box-accent {
+      color: var(--maroon-primary);
+      font-weight: 700;
     }
 
     .reflection-highlight {
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(14, 23, 42, 0.95));
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      border-radius: 10px;
+      background: linear-gradient(135deg, var(--maroon-soft), var(--white-pure));
+      border: 1px solid var(--maroon-border);
+      border-radius: var(--radius-sm);
       padding: 14px;
+      border-left: 4px solid var(--maroon-primary);
     }
     .reflection-title {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 12.5px;
-      font-weight: 700;
-      color: var(--cyan-bright);
+      font-weight: 800;
+      color: var(--maroon-primary);
       margin-bottom: 6px;
       display: flex;
       align-items: center;
@@ -601,7 +644,7 @@
     }
     .reflection-text {
       font-size: 11.5px;
-      color: var(--text-main);
+      color: var(--text-body);
       line-height: 1.5;
       font-style: italic;
     }
@@ -614,47 +657,50 @@
       height: calc(100% - 90px);
     }
     .award-card {
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.05), var(--bg-card));
-      border: 1px solid rgba(245, 158, 11, 0.25);
-      border-radius: 12px;
+      background: linear-gradient(135deg, var(--maroon-soft), var(--white-pure));
+      border: 1px solid var(--maroon-border);
+      border-radius: var(--radius-md);
       padding: 16px;
       display: flex;
       flex-direction: column;
       gap: 10px;
+      border-top: 4px solid var(--maroon-primary);
+      box-shadow: 0 4px 16px rgba(123, 17, 19, 0.05);
     }
     .award-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(245, 158, 11, 0.15);
-      color: var(--gold);
-      border: 1px solid rgba(245, 158, 11, 0.35);
+      background: var(--maroon-primary);
+      color: var(--white-pure);
       padding: 4px 10px;
       border-radius: 6px;
-      font-family: 'JetBrains Mono', monospace;
       font-size: 10.5px;
-      font-weight: 700;
+      font-weight: 800;
       width: fit-content;
+      letter-spacing: 0.5px;
     }
     .award-title {
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 800;
       line-height: 1.3;
+      color: var(--text-dark);
     }
     .award-desc {
       font-size: 11.5px;
-      color: var(--text-muted);
+      color: var(--text-body);
       line-height: 1.5;
     }
 
     .org-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
+      background: var(--white-pure);
+      border: 1px solid var(--maroon-border);
+      border-radius: var(--radius-md);
       padding: 16px;
       display: flex;
       flex-direction: column;
       gap: 12px;
+      box-shadow: 0 4px 16px rgba(123, 17, 19, 0.05);
     }
     .timeline-item {
       display: flex;
@@ -665,23 +711,24 @@
       width: 28px;
       height: 28px;
       border-radius: 8px;
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      color: var(--cyan-bright);
+      background: var(--maroon-soft);
+      border: 1px solid var(--maroon-light);
+      color: var(--maroon-primary);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 12px;
+      font-size: 13px;
       flex-shrink: 0;
     }
     .timeline-content h5 {
       font-size: 12.5px;
-      font-weight: 700;
+      font-weight: 800;
+      color: var(--text-dark);
     }
     .timeline-content .timeline-sub {
       font-size: 10.5px;
-      color: var(--cyan-soft);
-      font-family: 'JetBrains Mono', monospace;
+      color: var(--maroon-primary);
+      font-weight: 700;
       margin-bottom: 3px;
     }
     .timeline-content p {
@@ -703,28 +750,29 @@
       gap: 10px;
     }
     .roadmap-step {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
+      background: var(--white-pure);
+      border: 1px solid var(--maroon-border);
+      border-radius: var(--radius-sm);
       padding: 12px 14px;
       display: flex;
       gap: 12px;
       align-items: flex-start;
+      box-shadow: 0 2px 8px rgba(123, 17, 19, 0.03);
     }
     .roadmap-badge {
-      font-family: 'JetBrains Mono', monospace;
       font-size: 10px;
-      font-weight: 700;
-      color: var(--cyan-bright);
-      background: rgba(56, 189, 248, 0.12);
-      border: 1px solid rgba(56, 189, 248, 0.25);
+      font-weight: 800;
+      color: var(--maroon-primary);
+      background: var(--maroon-soft);
+      border: 1px solid var(--maroon-light);
       padding: 3px 8px;
       border-radius: 4px;
       flex-shrink: 0;
     }
     .roadmap-text h5 {
       font-size: 12.5px;
-      font-weight: 700;
+      font-weight: 800;
+      color: var(--text-dark);
       margin-bottom: 3px;
     }
     .roadmap-text p {
@@ -734,23 +782,25 @@
     }
 
     .cta-container {
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), var(--bg-card));
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      border-radius: 12px;
+      background: linear-gradient(135deg, var(--white-pure), var(--maroon-soft));
+      border: 1px solid var(--maroon-border);
+      border-radius: var(--radius-md);
       padding: 18px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      box-shadow: 0 4px 16px rgba(123, 17, 19, 0.06);
+      border-top: 4px solid var(--maroon-primary);
     }
     .cta-heading {
       font-size: 16px;
-      font-weight: 700;
-      color: var(--text-main);
+      font-weight: 800;
+      color: var(--maroon-primary);
       margin-bottom: 8px;
     }
     .cta-desc {
       font-size: 11.5px;
-      color: var(--text-muted);
+      color: var(--text-body);
       line-height: 1.5;
       margin-bottom: 16px;
     }
@@ -760,25 +810,27 @@
       gap: 10px;
     }
     .contact-item {
-      background: var(--bg-card-alt);
-      border: 1px solid var(--border-accent);
+      background: var(--white-pure);
+      border: 1px solid var(--maroon-border);
       padding: 10px 14px;
       border-radius: 8px;
       display: flex;
       align-items: center;
       gap: 10px;
       text-decoration: none;
-      color: var(--text-main);
+      color: var(--text-dark);
       font-size: 11.5px;
       transition: all 0.2s;
+      box-shadow: 0 2px 6px rgba(123, 17, 19, 0.03);
     }
     .contact-item:hover {
-      border-color: var(--cyan-bright);
+      border-color: var(--maroon-primary);
       transform: translateX(3px);
     }
     .contact-icon {
-      color: var(--cyan-bright);
+      color: var(--maroon-primary);
       font-size: 14px;
+      font-weight: 700;
     }
   </style>
 </head>
@@ -786,7 +838,7 @@
 
   <!-- Floating Print Toolbar -->
   <div class="toolbar no-print">
-    <span style="font-size: 12px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;">PDF Portfolio Ready</span>
+    <span style="font-size: 12px; color: var(--maroon-primary); font-weight: 700;">Maroon & White Edition</span>
     <button onclick="window.print()">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
       Print / Save as PDF
@@ -798,20 +850,20 @@
     <div class="slide-header">
       <div class="brand">
         <div class="brand-indicator"></div>
-        <span class="brand-text">Academic & Technical Portfolio</span>
+        <span class="brand-text">Academic & Engineering Portfolio</span>
       </div>
       <div class="target-tag">TARGET: MECHANICAL ENGINEERING • UNDIP</div>
     </div>
 
     <div class="cover-container">
       <div class="cover-badge-row">
-        <span class="badge badge-cyan">CLASS OF 2026</span>
-        <span class="badge badge-slate">SMAN 1 SUMEDANG</span>
-        <span class="badge badge-slate">TECH & ANALYTICAL PROFILE</span>
+        <span class="badge badge-maroon">CLASS OF 2026</span>
+        <span class="badge badge-soft">SMAN 1 SUMEDANG</span>
+        <span class="badge badge-soft">CREATIVE & ENGINEERING PROFILE</span>
       </div>
 
       <h1 class="cover-name">
-        MUHAMMAD YAJID <span class="title-accent">AZKIYA</span>
+        MUHAMMAD YAJID <span class="name-highlight">AZKIYA</span>
       </h1>
 
       <p class="cover-tagline">
@@ -854,7 +906,7 @@
       <div class="target-tag">I AM — IDENTITY & VALUES</div>
     </div>
 
-    <div class="section-eyebrow">// EXECUTIVE PROFILE</div>
+    <div class="section-eyebrow">✦ CANDIDATE PROFILE</div>
     <h2 class="section-title">Analytical Mindset Driven by <span class="title-accent">Engineering Purpose</span></h2>
     <p class="section-desc">Who I am, what guides my academic dedication, and why Mechanical Engineering is my chosen path.</p>
 
@@ -923,7 +975,7 @@
       <div class="target-tag">I CAN — SKILLS MATRIX</div>
     </div>
 
-    <div class="section-eyebrow">// TECHNICAL & SOFT SKILLS</div>
+    <div class="section-eyebrow">✦ TECHNICAL & TRANSFERABLE SKILLS</div>
     <h2 class="section-title">Core Competencies & <span class="title-accent">Engineering Pipeline</span></h2>
     <p class="section-desc">A balanced synergy between quantitative hard sciences, digital systems, and collaborative leadership.</p>
 
@@ -967,10 +1019,10 @@
 
         <div class="skill-box">
           <div class="skill-top">
-            <span class="skill-title">AI & Digital Media</span>
-            <span class="skill-cat">CREATIVE TECH</span>
+            <span class="skill-title">Creative Tech & Media</span>
+            <span class="skill-cat">COMMUNICATION</span>
           </div>
-          <p class="skill-desc">Generative AI workflows, prompt structuring, Canva visual synthesis, technical presentation.</p>
+          <p class="skill-desc">Creative media workflows, structured prompt craft, Canva visual synthesis, technical presentation.</p>
           <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
         </div>
 
@@ -1000,7 +1052,7 @@
           <div class="pipeline-dot">2</div>
           <div class="pipeline-text">
             <h5>System Modeling</h5>
-            <p>Drafting flowcharts, kinematic mechanics, and logic maps before committing to code or production.</p>
+            <p>Drafting flowcharts, kinematic mechanics, and logic maps before committing to production.</p>
           </div>
         </div>
         <div class="pipeline-step">
@@ -1036,7 +1088,7 @@
       <div class="target-tag">COMPUTATIONAL LOGIC & SIMULATION</div>
     </div>
 
-    <div class="section-eyebrow">// CASE STUDY 01</div>
+    <div class="section-eyebrow">✦ CASE STUDY 01</div>
     <h2 class="section-title">Multiplayer 2D Game <span class="title-accent">Logic Architecture</span></h2>
     <p class="section-desc">Applying coordinate mathematics, collision detection, and dual-entity state machines in Scratch.</p>
 
@@ -1076,21 +1128,15 @@
       </div>
 
       <div class="case-right">
-        <div class="interactive-preview">
-          <div class="preview-header">
-            <span class="preview-title">SYSTEM_LOGIC_SIMULATION.SCRATCH</span>
-            <span style="font-size: 9px; color: var(--emerald); font-family: 'JetBrains Mono', monospace;">STATUS: EXECUTING</span>
+        <div class="creative-showcase">
+          <div class="showcase-header">
+            <span class="showcase-title">SYSTEM ARCHITECTURE & FLOW</span>
+            <span style="font-size: 10px; color: var(--maroon-primary); font-weight: 700;">CONCURRENT LOGIC</span>
           </div>
-          <div class="code-snippet">
-            <span class="code-comment">// Concurrent Input & Vector Resolution</span><br>
-            <strong>WHEN</strong> [Key 'D' Pressed] {<br>
-            &nbsp;&nbsp;Set [Velocity_X_P1] to (Velocity_X_P1 + Acceleration)<br>
-            &nbsp;&nbsp;Broadcast ("Check_Collision_Matrix")<br>
-            }<br>
-            <strong>IF</strong> &lt;Touching [Boundary_Obstacle]&gt; <strong>THEN</strong> {<br>
-            &nbsp;&nbsp;Invert [Velocity_X_P1] * Restitution_Coeff<br>
-            &nbsp;&nbsp;Update_Coordinates (X, Y)<br>
-            }
+          <div class="creative-box">
+            <p><span class="creative-box-accent">Input Synchronization:</span> Isolated asynchronous key listeners for Player 1 (WASD) and Player 2 (Arrows).</p>
+            <p style="margin-top: 6px;"><span class="creative-box-accent">Kinematics Loop:</span> Velocity vector updates with friction coefficient dampening per frame.</p>
+            <p style="margin-top: 6px;"><span class="creative-box-accent">Collision Restitution:</span> Real-time bounding-box boundary detection with directional inversion.</p>
           </div>
         </div>
 
@@ -1119,12 +1165,12 @@
         <div class="brand-indicator"></div>
         <span class="brand-text">Featured Work Sample 02</span>
       </div>
-      <div class="target-tag">GENERATIVE AI & MULTIMODAL MEDIA</div>
+      <div class="target-tag">CREATIVE TECH & MULTIMODAL MEDIA</div>
     </div>
 
-    <div class="section-eyebrow">// CASE STUDY 02</div>
-    <h2 class="section-title">AI-Synthesized Video for <span class="title-accent">Global Communication</span></h2>
-    <p class="section-desc">Harnessing generative AI tools to produce high-impact English technical and educational video content.</p>
+    <div class="section-eyebrow">✦ CASE STUDY 02</div>
+    <h2 class="section-title">Audiovisual Production for <span class="title-accent">Global Communication</span></h2>
+    <p class="section-desc">Harnessing creative digital tools to produce high-impact English technical and educational video content.</p>
 
     <div class="case-layout">
       <div class="case-left">
@@ -1134,19 +1180,19 @@
             Problem Statement
           </div>
           <div class="spec-body">
-            Engineering concepts demand clear dissemination. The challenge was to harness emergent Generative AI technologies to create structured, natural English audiovisual content with high communicative fidelity.
+            Engineering concepts demand clear dissemination. The challenge was to harness emergent creative digital technologies to create structured, natural English audiovisual content with high communicative fidelity.
           </div>
         </div>
 
         <div class="case-spec-card">
           <div class="spec-header">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-            Process & Tool Pipeline
+            Process & Creative Pipeline
           </div>
           <div class="spec-body">
-            • <strong>Prompt Architecture:</strong> Formulated structured prompts to draft an accurate, engaging narrative script in academic English.<br>
-            • <strong>Voice Synthesis & Cadence:</strong> Tuned AI speech engines for natural prosody, pronunciation clarity, and pacing.<br>
-            • <strong>Visual Curation:</strong> Synchronized dynamic AI video generation with graphic overlays created in Canva.
+            • <strong>Script Architecture:</strong> Formulated structured prompts to draft an accurate, engaging narrative script in academic English.<br>
+            • <strong>Voice Synthesis & Cadence:</strong> Calibrated speech engines for natural prosody, pronunciation clarity, and pacing.<br>
+            • <strong>Visual Curation:</strong> Synchronized dynamic video generation with graphic overlays created in Canva.
           </div>
         </div>
 
@@ -1162,17 +1208,15 @@
       </div>
 
       <div class="case-right">
-        <div class="interactive-preview">
-          <div class="preview-header">
-            <span class="preview-title">AI_MULTIMODAL_PIPELINE.LOG</span>
-            <span style="font-size: 9px; color: var(--cyan-bright); font-family: 'JetBrains Mono', monospace;">SYNTHESIS PIPELINE</span>
+        <div class="creative-showcase">
+          <div class="showcase-header">
+            <span class="showcase-title">CREATIVE PRODUCTION WORKFLOW</span>
+            <span style="font-size: 10px; color: var(--maroon-primary); font-weight: 700;">MULTIMODAL PIPELINE</span>
           </div>
-          <div class="code-snippet">
-            [PROMPT_ENGINEERING] -> Script Structure v2.4<br>
-            [AUDIO_ENGINE] -> Neural TTS (140 WPM, Neutral Cadence)<br>
-            [VISUAL_ENGINE] -> AI Video Generation + Visual B-Roll<br>
-            [COMPOSITING] -> Canva Overlays + Typography Sync<br>
-            <span class="code-comment">// Output: Zero artifacts, high clarity English video</span>
+          <div class="creative-box">
+            <p><span class="creative-box-accent">Phase 1: Conceptualization</span> — Researching core theme & structuring formal English manuscript.</p>
+            <p style="margin-top: 6px;"><span class="creative-box-accent">Phase 2: Acoustic Calibration</span> — Tuning voice prosody (140 WPM) for natural academic delivery.</p>
+            <p style="margin-top: 6px;"><span class="creative-box-accent">Phase 3: Visual Compositing</span> — Aligning dynamic video sequences with Canva typographic slides.</p>
           </div>
         </div>
 
@@ -1182,7 +1226,7 @@
             Engineering Reflection
           </div>
           <p class="reflection-text">
-            "Modern engineers cannot work in silos. This project proved that AI is not a shortcut, but a powerful amplifier for human creativity and global academic communication."
+            "Modern engineers cannot work in silos. This project proved that creative technology is a powerful amplifier for human vision and global academic communication."
           </p>
         </div>
       </div>
@@ -1204,7 +1248,7 @@
       <div class="target-tag">ENERGY RESEARCH & SUSTAINABILITY</div>
     </div>
 
-    <div class="section-eyebrow">// CASE STUDY 03</div>
+    <div class="section-eyebrow">✦ CASE STUDY 03</div>
     <h2 class="section-title">SDG 7: Affordable & <span class="title-accent">Clean Energy Initiative</span></h2>
     <p class="section-desc">Investigating renewable energy transitions, thermodynamic principles, and community awareness.</p>
 
@@ -1244,17 +1288,15 @@
       </div>
 
       <div class="case-right">
-        <div class="interactive-preview">
-          <div class="preview-header">
-            <span class="preview-title">THERMODYNAMIC_FRAMEWORK.SDG7</span>
-            <span style="font-size: 9px; color: var(--emerald); font-family: 'JetBrains Mono', monospace;">EFFICIENCY ANALYSIS</span>
+        <div class="creative-showcase">
+          <div class="showcase-header">
+            <span class="showcase-title">ENERGY MODELING HIGHLIGHTS</span>
+            <span style="font-size: 10px; color: var(--maroon-primary); font-weight: 700;">CONVERSION PRINCIPLES</span>
           </div>
-          <div class="code-snippet">
-            [PRIMARY FOCUS]: Mechanical & Thermal Conversion<br>
-            &gt; Solar Insolation Absorption: \(\eta_{pv} \approx 18-22\%\)<br>
-            &gt; Micro-Hydro Kinematics: \(P = \eta \cdot \rho \cdot g \cdot Q \cdot H\)<br>
-            &gt; Loss Reduction in Mechanical Drive Trains<br>
-            <span class="code-comment">// Finding: Efficiency is the key driver of clean affordability</span>
+          <div class="creative-box">
+            <p><span class="creative-box-accent">Solar Insolation:</span> Analyzing commercial conversion efficiency (\(\eta_{pv} \approx 18-22\%\)) vs thermal absorption.</p>
+            <p style="margin-top: 6px;"><span class="creative-box-accent">Micro-Hydro Mechanics:</span> Applying kinematic flow equation \(P = \eta \cdot \rho \cdot g \cdot Q \cdot H\).</p>
+            <p style="margin-top: 6px;"><span class="creative-box-accent">Mechanical Transmission:</span> Reducing friction loss in gearboxes and generator couplings.</p>
           </div>
         </div>
 
@@ -1286,7 +1328,7 @@
       <div class="target-tag">HONORS & EXPERIENCE</div>
     </div>
 
-    <div class="section-eyebrow">// PROVEN TRACK RECORD</div>
+    <div class="section-eyebrow">✦ PROVEN TRACK RECORD</div>
     <h2 class="section-title">Academic Distinctions & <span class="title-accent">Leadership Roles</span></h2>
     <p class="section-desc">Demonstrating competitive excellence, organizational commitment, and personal discipline.</p>
 
@@ -1300,14 +1342,14 @@
         <p class="award-desc">
           Achieved 2nd Place nationally in the <strong>Mathematics Category</strong>. Competed against hundreds of top students across Indonesia, testing advanced algebra, combinatorial logic, geometry, and calculus concepts under strict time limits.
         </p>
-        <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 10px; margin-top: auto;">
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--gold); display: block; margin-bottom: 2px;">COMPETENCY PROVEN:</span>
-          <span style="font-size: 11px; color: var(--text-muted);">High-level analytical deduction, mental stamina, and precision mathematics indispensable for engineering mechanics.</span>
+        <div style="background: var(--white-pure); border: 1px solid var(--maroon-light); border-radius: 8px; padding: 10px; margin-top: auto;">
+          <span style="font-size: 11px; font-weight: 700; color: var(--maroon-primary); display: block; margin-bottom: 2px;">COMPETENCY PROVEN:</span>
+          <span style="font-size: 11px; color: var(--text-body);">High-level analytical deduction, mental stamina, and precision mathematics indispensable for engineering mechanics.</span>
         </div>
       </div>
 
       <div class="org-card">
-        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: var(--cyan-bright); margin-bottom: 6px;">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 800; color: var(--maroon-primary); margin-bottom: 6px;">
           LEADERSHIP & ATHLETIC DISCIPLINE
         </div>
 
@@ -1323,7 +1365,7 @@
         </div>
 
         <div class="timeline-item">
-          <div class="timeline-icon" style="color: var(--gold); border-color: rgba(245, 158, 11, 0.3);">
+          <div class="timeline-icon">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
           </div>
           <div class="timeline-content">
@@ -1351,7 +1393,7 @@
       <div class="target-tag">I WILL — STRATEGIC VISION</div>
     </div>
 
-    <div class="section-eyebrow">// FUTURE ROADMAP</div>
+    <div class="section-eyebrow">✦ FUTURE ROADMAP</div>
     <h2 class="section-title">Academic Roadmap & <span class="title-accent">Professional Vision</span></h2>
     <p class="section-desc">My 3-year plan at Diponegoro University and my long-term ambition for Indonesian industrial progress.</p>
 
@@ -1381,8 +1423,8 @@
           </div>
         </div>
 
-        <div style="background: var(--bg-card); border-left: 3px solid var(--cyan-bright); padding: 10px 14px; border-radius: 0 8px 8px 0; font-size: 11px; color: var(--text-muted); line-height: 1.4;">
-          <strong>Long-Term Ambition:</strong> To graduate as a world-class mechanical engineer who pioneers energy-efficient industrial machines and advances technological sovereignty in Indonesia.
+        <div style="background: var(--white-pure); border-left: 4px solid var(--maroon-primary); padding: 10px 14px; border-radius: 0 8px 8px 0; font-size: 11px; color: var(--text-body); line-height: 1.4; border: 1px solid var(--maroon-border); border-left: 4px solid var(--maroon-primary);">
+          <strong style="color: var(--maroon-primary);">Long-Term Ambition:</strong> To graduate as a world-class mechanical engineer who pioneers energy-efficient industrial machines and advances technological sovereignty in Indonesia.
         </div>
       </div>
 
@@ -1409,7 +1451,7 @@
           </div>
         </div>
 
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-dim); text-align: center; margin-top: 10px;">
+        <div style="font-size: 10.5px; color: var(--maroon-primary); text-align: center; margin-top: 10px; font-weight: 700;">
           VERIFIED STUDENT PORTFOLIO • SMAN 1 SUMEDANG
         </div>
       </div>
