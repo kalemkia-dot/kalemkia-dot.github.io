@@ -406,11 +406,32 @@
       box-shadow: 0 4px 16px rgba(123, 17, 19, 0.04);
       border-left: 4px solid var(--maroon-primary);
     }
+    .target-box-layout {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .target-logo-col {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 2px;
+    }
+    .undip-logo {
+      width: 50px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.08));
+    }
+    .target-text-col {
+      flex: 1;
+    }
     .target-header {
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       font-family: 'Space Grotesk', sans-serif;
       font-size: 13.5px;
       font-weight: 800;
@@ -971,13 +992,19 @@
         </div>
 
         <div class="target-box">
-          <div class="target-header">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 6 12 12 16 14"></polygon></svg>
-            Why Mechanical Engineering at Diponegoro University (UNDIP)?
+          <div class="target-box-layout">
+            <div class="target-logo-col">
+              <img src="undip-logo.png" alt="Universitas Diponegoro" class="undip-logo">
+            </div>
+            <div class="target-text-col">
+              <div class="target-header">
+                Why Mechanical Engineering at Diponegoro University (UNDIP)?
+              </div>
+              <p class="target-desc">
+                UNDIP's Mechanical Engineering department stands as a pinnacle of thermodynamic, automotive, and materials research in Indonesia. My goal is to immerse myself in high-level engineering mechanics, contribute to innovative student vehicle teams, and master both computational simulation and hardware manufacturing.
+              </p>
+            </div>
           </div>
-          <p class="target-desc">
-            UNDIP's Mechanical Engineering department stands as a pinnacle of thermodynamic, automotive, and materials research in Indonesia. My goal is to immerse myself in high-level engineering mechanics, contribute to innovative student vehicle teams, and master both computational simulation and hardware manufacturing.
-          </p>
         </div>
       </div>
 
